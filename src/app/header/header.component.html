@@ -1,0 +1,68 @@
+<header>
+  <nav class="sticky top-0 z-10 bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 shadow-md shadow-black/5 dark:shadow-black/10 transition duration-300 ease-in-out">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+      <!-- Logo -->
+      <button (click)="navigateTo('/')" routerLink="/" class="flex items-center">
+        <img class="w-10 h-10 rounded-full mr-10 items-center" src="assets/img/code.png" alt="Rounded avatar">
+        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Portfolio</span>
+      </button>
+      
+      <!-- Burger Menu Button for Mobile -->
+      <button
+        class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600 transition duration-300 ease-in-out"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        (click)="toggleMenu()"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="w-6 h-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M3 5h14a1 1 0 110 2H3a1 1 0 110-2zm0 6h14a1 1 0 110 2H3a1 1 0 110-2zm0 6h14a1 1 0 110 2H3a1 1 0 110-2z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Navigation Links -->
+      <div
+        class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+        [ngClass]="{ 'block': isMenuOpen, 'hidden': !isMenuOpen }"
+        id="mobile-menu"
+      >
+        <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 transition duration-300 ease-in-out">
+          <li>
+            <button
+              (click)="navigateTo('/')"
+              class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 hover:underline hover:underline-offset-4 hover:text-white transition duration-300 ease-in-out"
+              aria-current="page"
+            >Home</button>
+          </li>
+          <li>
+            <button
+              (click)="navigateTo('/projects')"
+              class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 hover:underline hover:underline-offset-4 hover:text-white transition duration-300 ease-in-out"
+            >Projects</button>
+          </li>
+          <li>
+            <button
+              (click)="navigateTo('/resume')"
+              class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 hover:underline hover:underline-offset-4 hover:text-white transition duration-300 ease-in-out"
+            >Resume</button>
+          </li>
+          <li>
+            <button
+              (click)="navigateTo('/contact')"
+              class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 hover:underline hover:underline-offset-4 hover:text-white transition duration-300 ease-in-out"
+            >Contact</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

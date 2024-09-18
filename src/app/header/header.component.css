@@ -1,0 +1,8 @@
+/* Optional: Add transition effects for the menu and overlay */
+#mobile-menu {
+    transition: transform 0.3s ease-in-out;
+  }
+  #mobile-menu-overlay {
+    transition: opacity 0.3s ease-in-out;
+  }
+  
